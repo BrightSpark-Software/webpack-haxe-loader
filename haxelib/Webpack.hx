@@ -97,7 +97,7 @@ class Webpack {
 			js.Syntax.code($v{dynamicImport})
 				.then(function(exports) {
 					$link;
-					js.Syntax.code($i{module}); // forced reference
+					var tempImport = js.Syntax.code($i{module}); // forced reference
 					return exports;
 				});
 		}

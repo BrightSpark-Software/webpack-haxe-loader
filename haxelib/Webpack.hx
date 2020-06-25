@@ -69,7 +69,7 @@ class Webpack {
 			case EConst(CString(module)):
 				var query = resolveModule(module);
 				var dynamicImport = createImport(module, query);
-				return macro untyped __js__($v{dynamicImport});
+				return macro untyped js.Syntax.code($v{dynamicImport});
 			default:
 		}
 		Context.fatalError('A String literal is required', Context.currentPos());
@@ -94,10 +94,10 @@ class Webpack {
 				});
 			}
 			#end
-			untyped __js__($v{dynamicImport})
+			untyped js.Syntax.code($v{dynamicImport})
 				.then(function(exports) {
 					$link;
-					var _ = untyped $i{module}; // forced reference
+					var forcedReference = untyped $i{module}; // forced reference
 					return exports;
 				});
 		}

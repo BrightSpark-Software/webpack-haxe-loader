@@ -107,7 +107,7 @@ class Webpack {
 		#if webpack_nonamedchunks
 		return 'import("$query")';
 		#else
-		return 'import("$query")';
+		return 'import(/* webpackChunkName: "$module" */ "$query")';
 		#end
 	}
 

@@ -113,7 +113,7 @@ class Webpack {
 
 	static function resolveModule(name:String) {
 		var ns = Context.definedValue('webpack_namespace');
-		return '!haxe-loader?$ns/$name!';
+		return '!haxe-loader?$ns/$name';
 	}
 
 	static function rebaseRelativePath(directory:String, file:String) {

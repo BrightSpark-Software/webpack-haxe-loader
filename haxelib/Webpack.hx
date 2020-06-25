@@ -94,10 +94,10 @@ class Webpack {
 				});
 			}
 			#end
-			js.Syntax.code($v{dynamicImport})
+			untyped __js__($v{dynamicImport})
 				.then(function(exports) {
 					$link;
-					var tempImport = js.Syntax.code($i{module}); // forced reference
+					var tempImport = untyped $i{module}; // forced reference
 					return exports;
 				});
 		}

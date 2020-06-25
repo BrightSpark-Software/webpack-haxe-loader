@@ -97,7 +97,7 @@ class Webpack {
 			untyped js.Syntax.code($v{dynamicImport})
 				.then(function(exports) {
 					$link;
-					var forcedReference = untyped $i{module}; // forced reference
+					untyped js.Syntax.code($i{module}); // forced reference
 					return exports;
 				});
 		}
@@ -113,7 +113,7 @@ class Webpack {
 
 	static function resolveModule(name:String) {
 		var ns = Context.definedValue('webpack_namespace');
-		return '!haxe-loader?$ns/$name';
+		return '!haxe-loader?$ns/$name!';
 	}
 
 	static function rebaseRelativePath(directory:String, file:String) {
